@@ -106,13 +106,13 @@ async def crawl_goods_by_price_section(category=None):
     total_page = root_json['data']['total_page']
     total_count = root_json['data']['total_count']
 
-    # buff有个page_size参数，默认一页请求20个item，最多80
-    # 尝试使用80，能将对buff的访问量减少为原来的1/4。暂时不作为可配置项，硬编码在代码里
+    # buff has a page_size parameter, default page request 20 items, max 80
+    # Try to use 80 to reduce access to the buff to 1/4 of the original size, not as a configurable item for now, hard-coded in the code
     use_max_page_size = True
     max_page_size = 80
     default_page_size = 20
 
-    # 使用80一页后，新的页码
+    # After using 80 pages, the new page number
     if use_max_page_size:
         total_page = math.ceil(total_count / max_page_size)
 

@@ -35,7 +35,7 @@
       <item>
        <widget class="QGroupBox" name="settings">
         <property name="title">
-         <string>设置</string>
+         <string>Settings</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
@@ -91,14 +91,14 @@
            <item>
             <widget class="QPushButton" name="getSteam">
              <property name="text">
-              <string>获取Steam Cookies</string>
+              <string>Get Steam Cookies</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="getBuff">
              <property name="text">
-              <string>获取Buff Cookies</string>
+              <string>Get Buff Cookies</string>
              </property>
             </widget>
            </item>
@@ -116,7 +116,7 @@
            <item>
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>价格限定：</string>
+              <string>Price limit：</string>
              </property>
             </widget>
            </item>
@@ -160,7 +160,7 @@
            <item>
             <widget class="QPushButton" name="typeRestrict">
              <property name="text">
-              <string>类型限定</string>
+              <string>Type limitation</string>
              </property>
             </widget>
            </item>
@@ -188,7 +188,7 @@
            <item>
             <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>代理:</string>
+              <string>Proxy:</string>
              </property>
             </widget>
            </item>
@@ -214,7 +214,7 @@
          <item>
           <widget class="QPushButton" name="crawlStart">
            <property name="text">
-            <string>开始</string>
+            <string>Start</string>
            </property>
           </widget>
          </item>
@@ -224,7 +224,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_2">
         <property name="title">
-         <string>输出</string>
+         <string>Output</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>

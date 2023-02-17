@@ -29,14 +29,14 @@ class selector(QtWidgets.QWidget):
         iconf = QtCore.QFileInfo(":/csgo/" + categories[index] + ".svg");
         if iconf.exists():
             icon = QtSvg.QSvgWidget(":/csgo/" + categories[index] + ".svg")
-            icon.setFixedSize(icon.width() / 3, icon.height() / 3)
+            icon.setFixedSize(int(icon.width() / 3), int(icon.height() / 3))
             hbox.addWidget(icon)
         hbox.addWidget(checkbox)
         grid_layout.addLayout(hbox, i, j)
 
     def __init__(self, parent = None):
         super(selector, self).__init__(parent)
-        self.setWindowTitle("类型限定")
+        self.setWindowTitle("Type limitation")
         out.enabled = False
         categories = csgo_all_categories()
         self.cur_category = final_categories(categories)

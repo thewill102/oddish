@@ -5,7 +5,7 @@ from src.util.logger import log
 
 
 def final_categories(categories):
-    """白名单优先于黑名单"""
+    """Whitelist has priority over blacklist"""
 
     log.info('Blacklist categories({}): {}'.format(len(config.CATEGORY_BLACK_LIST), config.CATEGORY_BLACK_LIST))
     log.info('Whitelist categories({}): {}'.format(len(config.CATEGORY_WHITE_LIST), config.CATEGORY_WHITE_LIST))

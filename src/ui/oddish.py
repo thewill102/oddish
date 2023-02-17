@@ -93,8 +93,8 @@ class oddish(Ui_MainWindow):
         self.proxyEditor.setPlainText(config.PROXY)
         self.steamCookie.setPlainText(SimpleCookie(config.STEAM_COOKIE).output(header = '', sep=';'))
         self.buffCookie.setPlainText(SimpleCookie(config.BUFF_COOKIE).output(header = '', sep=';'))
-        self.priceMin.setValue(config.CRAWL_MIN_PRICE_ITEM)
-        self.priceMax.setValue(config.CRAWL_MAX_PRICE_ITEM)
+        self.priceMin.setValue(int(config.CRAWL_MIN_PRICE_ITEM))
+        self.priceMax.setValue(int(config.CRAWL_MAX_PRICE_ITEM))
 
         out.text_signal.connect(self.log_output)
         Dialog.closeEvent = self.on_quit
@@ -151,12 +151,13 @@ class oddish(Ui_MainWindow):
         self.crawl_t = crawler()
         self.crawl_t._signal.connect(functools.partial(self.crawlStart.setEnabled, True))
         self.crawl_t.start()
+        
     def log_output(self, text):
         self.logger.moveCursor(QtGui.QTextCursor.End)
         self.logger.insertPlainText(text)
 
     def on_quit(self, event):
-        reply = QMessageBox.question(QtWidgets.QMainWindow(), '信息', '保存配置吗？', 
+        reply = QMessageBox.question(QtWidgets.QMainWindow(), 'Attention', 'Save configuration?', 
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             config.save()

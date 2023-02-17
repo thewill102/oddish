@@ -6,7 +6,7 @@ class Item:
     def __init__(self, buff_id, name, price, sell_num, steam_url, steam_predict_price, buy_max_price):
         self.id = buff_id
         self.name = name
-        self.price = float(price)
+        self.price = float(price)*0.14
         self.sell_num = int(sell_num)
         self.steam_url = steam_url
         self.steam_predict_price = float(steam_predict_price)
@@ -36,10 +36,16 @@ class Item:
         self.discount_percent = self.price / self.average_sold_price_after_tax
 
     def detail(self):
-        return "{}: {}(steam .25 percentile sold price after tax) - {}(buff) = {}(beyond {:.2%}, {:.2%}). " \
-               "Sold {} items in {} days.\n steam url:{}\n buff url: https://buff.163.com/market/goods?goods_id={}&from=market#tab=selling" \
+        temp1 = ""
+        temp2 = self.name
+        if(temp2.startswith("StatTrak") or temp2.startswith("Souvenir")):
+            temp1 = ""
+        else: temp1 = "\t" 
+        
+        return "{}: {}\t {:.2f}€ Steam a.T. - {:.2f}€ Buff = {:.2f}(Profit {:.2%}, {:.2%}). {} sold/{} days." \
             .format(
             self.name,
+            temp1,
             self.average_sold_price_after_tax,
             self.price,
             self.gap,
